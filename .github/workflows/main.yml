@@ -38,7 +38,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            eval "${{ matrix.node-version }}"
+            eval "$(ssh-agent -s)"
             ssh-add ~/.ssh/ssh-praktikan3
             echo "Cek folder project";
             [ ! -d "${HOME}/senpro/475348/modul02/senpro-github-action/" ] &&
